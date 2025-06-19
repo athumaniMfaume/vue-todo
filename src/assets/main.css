@@ -24,6 +24,7 @@ body {
 /* App full width and padding */
 #app {
   width: 100%;
+  max-width: 100%;
   padding: 2rem 1rem;
 }
 

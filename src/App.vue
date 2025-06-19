@@ -102,9 +102,9 @@ function filterClass(type) {
 .app-wrapper {
   min-height: 100vh;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #f0f4f8;
 }
 
@@ -112,14 +112,14 @@ function filterClass(type) {
   width: 100%;
   max-width: 600px;
   background: #ffffff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Title */
 .todo-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: bold;
   color: #1f2937;
   text-align: center;
@@ -129,8 +129,15 @@ function filterClass(type) {
 /* Form */
 .todo-form {
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .todo-form {
+    flex-direction: row;
+  }
 }
 
 .todo-input {
@@ -164,6 +171,7 @@ function filterClass(type) {
 /* Filters */
 .todo-filters {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
@@ -200,13 +208,15 @@ function filterClass(type) {
   justify-content: space-between;
   padding: 0.75rem 0;
   border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
 }
 
 .todo-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   flex: 1;
   color: #1f2937;
+  word-break: break-word;
 }
 
 .todo-text.completed {
